@@ -1,82 +1,168 @@
-<div nz-row nzJustify="center">
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}">Reset</div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}">Hover</div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}">Pressed</div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}">Disabled</div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}">Focus</div>
-
+<div nz-row nzJustify="center" [ngStyle]="{'marginTop': '1rem','marginBottom': '1rem'}">
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">Reset</div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">Hover</div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">Pressed</div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">Disabled</div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">Focus</div>
 </div>
 <!-- 1st row -->
 <div nz-row nzJustify="center">
-  <div nz-col [ngStyle]="{color:'#394892'}" nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button
-      nzType="primary" nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div
+    nz-col
+    nzSpan="2"
+    [nzLg]="{ offset: 1 }"
+  >
+    <button nzSize="large" nz-button nzType="primary" [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor}" nzShape="round" type="reset">
+      <span nz-icon nzType="star"></span> Reset
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button nzType="primary" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" nz-button nzType="primary" nzShape="round"
+    [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor}"
+    >
+      <span nz-icon nzType="star"></span> Hover
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" ant-cl nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button
+      nzSize="large"
+      ant-cl
+      nz-button
+      nzType="primary"
+      class="{{ focusState === true ? 'pressedButton' : '' }}"
+      nzShape="round"
+      [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor}"
+    >
+      <span nz-icon nzType="star"></span> Pressed
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" disabled nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" disabled nz-button nzType="primary" nzShape="round">
+      <span nz-icon nzType="star"></span> Disabled
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button nzType="dashed" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" nz-button nzType="dashed" nzShape="round" autofocus [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor,'color':myBtn.btnTextColor}">
+      <span nz-icon nzType="star"></span> Focus
+    </button>
   </div>
-
 </div>
 <!-- 2nd row -->
 <div nz-row nzJustify="center">
-  <div nz-col [ngStyle]="{color:'#394892'}" nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button
-      nzType="default" nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div
+    nz-col
+    [ngStyle]="{ color: '#394892' }"
+    nzSpan="2"
+    [nzLg]="{ offset: 1 }"
+  >
+    <button nzSize="large" nz-button nzType="default" nzShape="round" type="reset">
+      <span nz-icon nzType="star"></span> Reset
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button nzType="default" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" nz-button nzType="default" nzShape="round">
+      <span nz-icon nzType="star"></span> Hover
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" ant-cl nz-button nzType="default"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button
+      nzSize="large"
+      ant-cl
+      nz-button
+      nzType="default"
+      nzShape="round"
+      class="{{ focusState === true ? 'pressedButton' : '' }}"
+    >
+      <span nz-icon nzType="star"></span> Pressed
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" disabled nz-button nzType="default"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" disabled nz-button nzType="default" nzShape="round">
+      <span nz-icon nzType="star"></span> Disabled
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="large" nz-button nzType="dashed" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="large" nz-button nzType="dashed" nzShape="round" autofocus>
+      <span nz-icon nzType="star"></span> Focus
+    </button>
   </div>
-
 </div>
 <div nz-row nzJustify="center">
-  <div nz-col [ngStyle]="{color:'#394892'}" nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button
-      nzType="primary" nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div
+    nz-col
+    [ngStyle]="{ color: '#394892' }"
+    nzSpan="2"
+    [nzLg]="{ offset: 1 }"
+  >
+    <button nzSize="default" nz-button  nzShape="round" type="reset"
+    [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor,'color':myBtn.btnTextColor}"
+    >
+      <span nz-icon nzType="star"></span> Reset
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button nzType="primary" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" nz-button  nzShape="round"
+    [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor,'color':myBtn.btnTextColor}"
+    >
+      <span nz-icon nzType="star"></span> Hover
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" ant-cl nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
-  </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" disabled nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
-  </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button nzType="dashed" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
-  </div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button
+      nzSize="default"
+      ant-cl
+      nz-button
 
+      nzShape="round"
+      class="{{ focusState === true ? 'pressedButton' : '' }}"
+      [ngStyle]="{'background': myBtn.btnBgColor,'borderColor':myBtn.borderColor,'color':myBtn.btnTextColor}"
+    >
+      <span nz-icon nzType="star"></span> Pressed
+    </button>
+  </div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" disabled nz-button nzType="primary" nzShape="round">
+      <span nz-icon nzType="star"></span> Disabled
+    </button>
+  </div>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" nz-button nzType="dashed" nzShape="round" autofocus
+    [ngStyle]="{'background': backGroundButtoncolor ,'color':buttonTextColor,'borderColor':myBtn.borderColor}"
+    >
+      <span nz-icon nzType="star"></span> Focus
+    </button>
+  </div>
 </div>
 <div nz-row nzJustify="center">
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button nzType="primary" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" nz-button  nzShape="round" type="reset">
+      <span nz-icon nzType="star"></span> Reset
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button nzType="primary" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" nz-button  nzShape="round">
+      <span nz-icon nzType="star"></span> Hover
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" ant-cl nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button
+      nzSize="default"
+      ant-cl
+      nz-button
+      nzShape="round"
+      class="{{ focusState === true ? 'pressedButton' : '' }}"
+    >
+      <span nz-icon nzType="star"></span> Pressed
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" disabled nz-button nzType="primary"
-      nzShape="round"><span nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" disabled nz-button nzType="primary" nzShape="round">
+      <span nz-icon nzType="star"></span> Disabled
+    </button>
   </div>
-  <div nz-col nzSpan="2" [nzLg]="{offset:1}"><button nzSize="small" nz-button nzType="dashed" nzShape="round"><span
-        nz-icon nzType="star"></span> Button </button>
+  <div nz-col nzSpan="2" [nzLg]="{ offset: 1 }">
+    <button nzSize="default" nz-button nzType="dashed" nzShape="round" autofocus>
+      <span nz-icon nzType="star"></span> Focus
+    </button>
   </div>
-
 </div>

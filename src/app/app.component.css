@@ -10,3 +10,7 @@
     background: #ECEDF6
     ;
   }
+
+  .pressedButton{
+    border-style: inset;
+  }

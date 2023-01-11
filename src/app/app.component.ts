@@ -9,4 +9,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 })
 export class AppComponent {
   title = 'FilledButton';
+  focusState=true;
+  backGroundButtoncolor='#385DAC';
+  buttonTextColor='white';
+  myBtn={
+    btnBgColor:'#385DAC',
+    btnTextColor:'white',
+    borderColor:'#385DAC'
+    
+  }
 }
